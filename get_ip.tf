@@ -1,5 +1,5 @@
 resource "null_resource" "get_ip" {
-	trigger= {
+	triggers= {
 	mytest = timestamp()
 
 }
