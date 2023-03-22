@@ -31,8 +31,7 @@ pipeline{
             sh 'terraform destroy -auto-approve'
             
         }
-    }
-   #new 
+    } 
 
     }
 }
