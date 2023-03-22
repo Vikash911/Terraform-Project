@@ -7,7 +7,7 @@ resource "aws_instance" "my_ec2" {
   key_name               = "Window-server"
   vpc_security_group_ids = [aws_security_group.allow_ssh1.id]
   tags = {
-    Name = "os1"
+    Name = "Ansible"
   }
   depends_on = [aws_vpc.my-vpc, aws_internet_gateway.MyGateway9, aws_subnet.subnets, aws_route_table.RTable, aws_route_table_association.route_asso, aws_security_group.allow_ssh1]
 }
