@@ -27,6 +27,27 @@ pipeline{
         sh 'terraform apply -auto-approve'
       }
         }
+
+   stage('approved') {
+            steps {
+                
+            
+            script {
+                Boolean userInput = input(id: 'Proceed1', message: 'Promote build?', parameters: [[$class: 'BooleanParameterDefinition', defaultValue: true, description: '', name: 'Please confirm you agree to destroy the infra ?']])
+                echo 'userInput: ' + userInput
+
+                if(userInput == true) {
+                    // do action
+                } else {
+                    // not do action
+                    echo "Action was aborted."
+                }
+            
+                
+            }
+        }
+        }
+
    stage('terraform destroy'){
         steps {
             sh 'terraform destroy -auto-approve'
