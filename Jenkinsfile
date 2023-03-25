@@ -54,14 +54,14 @@ pipeline{
             }
         }
         }
+  stage('Trigger my-next-job') {
+    steps {
+        echo 'Triggering my-next-job...'
+        build job: 'anible-p'
+    }
+}
 
-
-   stage('terraform destroy'){
-        steps {
-            sh 'terraform destroy -auto-approve'
-            
-        }
-    } 
+     
 
     }
 }
