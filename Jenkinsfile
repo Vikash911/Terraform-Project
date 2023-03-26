@@ -27,10 +27,10 @@ pipeline{
         sh 'terraform apply -auto-approve'
       }
         }
-    stage('Pause for 5 minutes') {
+    stage('Pause for 60  Seconds') {
        steps {
         echo 'Pausing for 5 minutes...'
-        sleep time: 180, unit: 'SECONDS'
+        sleep time: 60, unit: 'SECONDS'
         echo 'Resuming pipeline execution'
     }
 }
