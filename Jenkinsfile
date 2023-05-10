@@ -57,7 +57,7 @@ pipeline{
   stage('Trigger my-next-job') {
     steps {
         echo 'Triggering my-next-job...'
-        build job: 'anible-p'
+        build job: 'ansible-p'
     }
 }
 
